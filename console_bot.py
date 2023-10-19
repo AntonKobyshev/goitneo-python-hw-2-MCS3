@@ -9,11 +9,13 @@ def input_error(func):
         try:
             return func(*args, **kwargs)
         except KeyError:
-            return "Enter user name."
+            return "Enter user name please."
         except IndexError:
             return "Give me name and phone please."
         except ValueError:
-            return "Invalid input format. Please enter a valid name and phone number."
+            return "Give me name and phone please."
+        except Exception as e:
+            return f"An unexpected error occurred: {str(e)}"
     return inner
 
 
