@@ -26,22 +26,22 @@ class Record:
         self.name = Name(name)
         self.phones = []
 
-    def add_phone(self, phone):
-        self.phones.append(Phone(phone))
+    def add_phone(self, phone_number):
+        self.phones.append(Phone(phone_number))
 
-    def remove_phone(self, phone):
+    def remove_phone(self, phone_number):
         for p in self.phones:
-            if p.value == phone:
+            if p.value == phone_number:
                 self.phones.remove(p)
 
-    def edit_phone(self, current_phone, new_phone):
+    def edit_phone(self, current_number, new_number):
         for p in self.phones:
-            if p.value == current_phone:
-                p.value = new_phone
+            if p.value == current_number:
+                p.value = new_number
 
-    def find_phone(self, phone):
+    def find_phone(self, number):
         for p in self.phones:
-            if p.value == phone:
+            if p.value == number:
                 return p
 
     def __str__(self):
@@ -53,18 +53,18 @@ class AddressBook(UserDict):
     def __init__(self):
         self.data = {}
 
-    def add_record(self, record):
-        self.data[record.name.value] = record
+    def add_record(self, contact):
+        self.data[contact.name.value] = contact
 
-    def find(self, name):
-        if name in self.data:
-            return self.data[name]
+    def find(self, key):
+        if key in self.data:
+            return self.data[key]
         else:
             return None
 
-    def delete(self, name):
-        if name in self.data:
-            del self.data[name]
+    def delete(self, key):
+        if key in self.data:
+            del self.data[key]
 
 # Приклад використання
 
