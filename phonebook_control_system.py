@@ -10,8 +10,7 @@ class Field:
 
 
 class Name(Field):
-    def __init__(self, name):
-        super().__init__(name)
+    pass
 
 
 class Phone(Field):
@@ -66,8 +65,10 @@ class AddressBook(UserDict):
         if key in self.data:
             del self.data[key]
 
-# Приклад використання
 
+# Приклад використання
+if __name__ == "__main__":
+    print("Test script:")
 
 book = AddressBook()
 
